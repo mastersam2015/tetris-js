@@ -1,0 +1,1057 @@
+<body>
+<meta name="viewport" content="width=180">
+<script type="text/javascript" src="jquery.js"></script>
+<center>
+<canvas id="myCanvas" width="120" height="200" class="myCanvas"></canvas>
+
+
+
+<script>
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeStyle = '#ffffff'
+
+
+
+
+
+
+var p=0; var pe=0; var y=0; var x=0; var mozna=0; var rando=0; var key=0; var delta=0; var i=0; var j=0; var rzad=0; var policz=0; var max=0;
+var dotab=0;
+var dotab2=0;
+var dotab3=0;
+var dotab4=0;
+var dotab5=0;
+var dotab6=0;
+var dotab7=0;
+var dotab8=0;
+var dotab9=0;
+var x2;
+var y2;
+var tab = new Array();
+var tab2 = new Array();
+
+for(i=0;i<=20;i++){
+for (j=0;j<=20;j++){
+dotab=parseInt(i+""+j);
+if(tab[dotab] == undefined){
+tab[dotab]=0;
+}
+
+}
+
+
+}
+function rand( min, max ){
+    min = parseInt( min, 10 );
+    max = parseInt( max, 10 );
+
+    if ( min > max ){
+        var tmp = min;
+        min = max;
+        max = tmp;
+    }
+
+    return Math.floor( Math.random() * ( max - min + 1 ) + min );
+}
+
+
+function keys(a){
+
+key=a;
+
+}
+
+function figura4(x,y,p,z){
+
+if (z==1){
+
+//ctx.strokeStyle = '#ffffff';
+}
+
+
+if (z==2){
+
+//ctx.strokeStyle = '#000000';
+}
+
+if (p==1){
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x, y, 10, 10);
+ctx.strokeRect(x+10, y, 10, 10);
+ctx.strokeRect(x+20, y, 10, 10);
+ctx.strokeRect(x+10, y+10, 10, 10);
+ctx.stroke();
+}
+
+if (p==2){
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x, y, 10, 10);
+ctx.strokeRect(x, y+10, 10, 10);
+ctx.strokeRect(x, y+20, 10, 10);
+ctx.strokeRect(x+10, y+10, 10, 10);
+
+}
+
+
+if (p==3) {
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x+10, y, 10, 10);
+ctx.strokeRect(x+10, y+10, 10, 10);
+ctx.strokeRect(x, y+10, 10, 10);
+ctx.strokeRect(x+20, y+10, 10, 10);
+ctx.stroke();
+
+}
+
+
+
+if (p==4) {
+
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x, y+10, 10, 10);
+ctx.strokeRect(x+10, y, 10, 10);
+ctx.strokeRect(x+10, y+10, 10, 10);
+ctx.strokeRect(x+10, y+20, 10, 10);
+
+ctx.stroke();
+
+
+
+
+
+
+
+}
+
+
+
+//alert(y);
+
+
+
+}
+
+
+
+function figura3(x,y,p,z){
+
+
+if (z==1) {
+
+//ctx.strokeStyle = '#ffffff';
+}
+
+
+if (z==2) {
+
+//ctx.strokeStyle = '#000000';
+
+
+
+
+}
+
+if (p==1) {
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x, y, 10, 10);
+
+ctx.strokeRect(x, y+10, 10, 10);
+
+ctx.strokeRect(x, y+20, 10, 10);
+
+ctx.strokeRect(x, y+30, 10, 10);
+ctx.stroke();
+}
+
+
+
+if (p==2) {
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x, y, 10, 10);
+
+ctx.strokeRect(x+10, y, 10, 10);
+
+ctx.strokeRect(x+20, y, 10, 10);
+
+ctx.strokeRect(x+30, y, 10, 10);
+ctx.stroke();
+}
+
+}
+
+
+function figura2(x,y,z){
+
+
+
+
+if (z==1) {
+
+//ctx.strokeStyle = '#ffffff';
+}
+
+
+if (z==2) {
+
+//ctx.strokeStyle = '#000000';
+
+
+
+}
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x, y, 10, 10);
+
+ctx.strokeRect(x+10, y, 10, 10);
+
+ctx.strokeRect(x, y+10, 10, 10);
+
+ctx.strokeRect(x+10, y+10, 10, 10);
+
+
+ctx.stroke();
+
+
+}
+
+
+function figura1(x,y,p,z){
+
+
+if (z==1) {
+
+//ctx.strokeStyle = '#ffffff';
+}
+
+
+if (z==2) {
+
+//ctx.strokeStyle = '#000000';
+
+
+
+
+
+
+}
+
+if (p==1) {
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x, y, 10, 10);
+
+ctx.strokeRect(x+10, y, 10, 10);
+
+ctx.strokeRect(x+10, y+10, 10, 10);
+
+ctx.strokeRect(x+10, y+20, 10, 10);
+ctx.stroke();
+}
+
+
+
+if (p==2) {
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x, y, 10, 10);
+
+ctx.strokeRect(x, y+10, 10, 10);
+
+ctx.strokeRect(x, y+20, 10, 10);
+
+ctx.strokeRect(x+10, y+20, 10, 10);
+ctx.stroke();
+}
+
+
+
+if (p==3) {
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x, y, 10, 10);
+
+ctx.strokeRect(x+10, y, 10, 10);
+
+ctx.strokeRect(x, y+10, 10, 10);
+
+ctx.strokeRect(x, y+20, 10, 10);
+ctx.stroke();
+}
+
+
+
+
+
+if (p==4) {
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(x, y, 10, 10);
+
+ctx.strokeRect(x+10, y, 10, 10);
+
+ctx.strokeRect(x+20, y, 10, 10);
+
+ctx.strokeRect(x+20, y-10, 10, 10);
+ctx.stroke();
+}
+
+
+
+
+
+
+
+
+
+
+}
+
+
+//--------------------------------------------------program
+
+pe=1;
+y=20;
+x=50;
+p=1;
+mozna=1;
+delta=0;
+rzad=0;
+policz=0;
+
+for (i=1;i<=18;i++){
+
+dotab=parseInt(i+""+18);
+tab[dotab]=1;
+
+
+}
+
+//alert(dotab);
+pe=1;
+
+
+ctx.fillStyle = '#000000';
+ctx.fillRect(0,0,100,200);
+
+tab[5181]=1;//?
+function glowna(){
+
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.fillStyle = '#000000';
+ctx.fillRect(0,0,100,200);
+
+
+if (mozna==1) {
+
+rando=rand(1,4);
+
+mozna=0;
+}
+
+
+
+
+
+//------------------------------------klawiaturka
+
+
+
+if (key==4) {
+
+delta=delta-10;
+}
+
+
+if (key==5) {
+
+p=p+1;
+}
+
+
+if (key==6) {
+
+delta=delta+10;
+}
+
+
+//-----------------------------------------------random
+//alert(rando);
+if (rando==1) {
+
+
+
+if (p>=5) {
+
+p=1;
+}
+//alert(1);
+//figura1(x,y-10,p,2);
+
+figura1(x,y,p,1);
+
+}
+
+
+if (rando==2) {
+
+
+//figura2(x,y-10,2);
+
+figura2(x,y,1);
+//alert(2);
+}
+
+
+if (rando==3) {
+
+
+//alert(3);
+
+if (p>=3) {
+
+p=1;
+}
+
+//figura3(x,y-10,p,2);
+
+figura3(x,y,p,1);
+
+}
+
+
+
+if (rando==4) {
+
+
+if (p>=5) {
+
+p=1;
+}
+//figura4(x,y-10,p,2);
+
+figura4(x,y,p,1);
+//alert(4);
+}
+
+
+
+
+
+rzad=0;
+
+if (x<10) {
+
+x=10;
+}
+
+if (x>100) {
+
+x=100;
+}
+
+
+if(x>0 && y>0){
+
+if ((rando==1)&&(p==1)) {
+dotab=parseInt((x)/10+""+((y)/10+1));
+dotab2=parseInt((x+10)/10+""+((y)/10+1));
+dotab3=parseInt((x+10)/10+""+((y+10)/10+1));
+dotab4=parseInt((x+10)/10+""+((y+20)/1+10));
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1)) {
+
+dotab5=parseInt((x)/10+""+((y)/10));
+tab[dotab5]=1;
+dotab6=parseInt((x+10)/10+""+((y)/10));
+tab[dotab6]=1;
+dotab7=parseInt((x+10)/10+""+(y+10)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+10)/10+""+(y+20)/10);
+tab[dotab8]=1;
+
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+}
+
+}
+
+
+
+
+if ((rando==1)&&(p==2)) {
+dotab=parseInt((x)/10+""+((y)/10+1));
+dotab2=parseInt((x)/10+""+((y+10)/10+1));
+dotab3=parseInt((x)/10+""+((y+20)/10+1));
+dotab4=parseInt((x+10)/10+""+((y+20)/10+1));
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1)) {
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x)/10+""+(y+10)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x)/10+""+(y+20)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+10)/10+""+(y+20)/10);
+tab[dotab8]=1;
+
+
+
+
+
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+}
+
+}
+
+
+
+/*
+dotab=parseInt((x)/10+""+((y)/10)+1);
+dotab2=parseInt((x)/10+""+((y+10)/10)+1);
+dotab3=parseInt((x)/10+""+((y+20)/10)+1);
+dotab4=parseInt((x+10)/10+""+((y+20)/10)+1);
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1)) {
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x)/10+""+(y+10)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x)/10+""+(y+20)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+10)/10+""+(y+20)/10);
+tab[dotab8]=1;
+
+
+*/
+
+
+if ((rando==1)&&(p==3)) {
+dotab=parseInt((x)/10+""+((y)/10+1));
+dotab2=parseInt((x+10)/20+""+((y)/10+1));
+dotab3=parseInt((x)/10+""+((y+10)/10+1));
+dotab4=parseInt((x)/10+""+((y+20)/10+1));
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1)) {
+
+
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x+10)/10+""+(y)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x)/10+""+(y+10)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x)/10+""+(y+20)/10);
+tab[dotab8]=1;
+
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+}
+
+}
+
+
+/*
+
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1)) {
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x)/10+""+(y+10)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x)/10+""+(y+20)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+10)/10+""+(y+20)/10);
+tab[dotab8]=1;
+
+
+*/
+
+
+if ((rando==1)&&(p==4)) {
+dotab=parseInt((x)/10+""+((y)/10+1));
+dotab2=parseInt((x+10)/10+""+((y)/10+1));
+dotab3=parseInt((x+20)/10+""+((y)/10+1));
+dotab4=parseInt((x+20)/10+""+((y-10)/10+1));
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1))  {
+
+
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x+10)/10+""+(y)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x+20)/10+""+(y)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+20)/10+""+(y-10)/10);
+tab[dotab8]=1;
+
+
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+
+}
+
+}
+
+
+
+if ((rando==2)) {
+
+dotab=parseInt((x)/10+""+((y)/10+1));
+dotab2=parseInt((x)/10+""+((y+10)/10+1));
+dotab3=parseInt((x+10)/10+""+((y+10)/10+1));
+dotab4=parseInt((x+10)/10+""+((y)/10+1));
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1)) {
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x+10)/10+""+(y)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x)/10+""+(y+10)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+10)/10+""+(y+10)/10);
+tab[dotab8]=1;
+
+//alert("jest warunek 666666666666"+dotab5);
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+}
+//alert("jest kwadrat "+dotab+" -jeden"+tab[dotab2]+" -dwa"+tab[dotab3]+" - trzy"+tab[dotab4]+" -cztery");
+}
+
+
+/*
+
+dotab=parseInt((x)/10+""+((y)/10)+1);
+dotab2=parseInt((x+10)/10+""+((y)/10)+1);
+dotab3=parseInt((x+20)/10+""+((y)/10)+1);
+dotab4=parseInt(x+20)/10+""+((y-10)/10)+1);
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1))  {
+
+
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x+10)/10+""+(y)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x+20)/10+""+(y)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+20)/10+""+(y-10)/10);
+tab[dotab8]=1;
+
+*/
+
+if ((rando==3)&&(p==1)) {
+dotab=parseInt((x)/10+""+((y)/10+1));
+dotab2=parseInt((x)/10+""+((y+10)/10+1));
+dotab3=parseInt((x)/10+""+((y+20)/10+1));
+dotab4=parseInt((x)/10+""+((y+30)/10+1));
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1))  {
+
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x)/10+""+(y+10)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x)/10+""+(y+20)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x)/10+""+(y+30)/10);
+tab[dotab8]=1;
+
+
+
+
+
+
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+
+}
+
+}
+
+
+/*
+
+if   {
+
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x)/10+""+(y+10)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x)/10+""+(y+20)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x)/10+""+(y+30)/10);
+tab[dotab8]=1;
+*/
+
+if ((rando==3)&&(p==2)) {
+dotab=parseInt((x)/10+""+((y)/10+1));
+dotab2=parseInt((x+10)/10+""+((y)/10+1));
+dotab3=parseInt((x+20)/10+""+((y)/10+1));
+dotab4=parseInt((x+30)/10+""+((y)/10+1));
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1)) {
+
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x+10)/10+""+(y)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x+20)/10+""+(y)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+30)/10+""+(y)/10);
+tab[dotab8]=1;
+
+
+
+
+
+
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+}
+
+}
+
+
+/*
+
+
+
+
+dotab=parseInt((x)/10+""+((y)/10)+1);
+dotab2=parseInt((x+10)/10+""+((y)/10)+1);
+dotab3=parseInt((x+20)/10+""+((y)/10)+1);
+dotab4=parseInt((x+30)/10+""+((y)/10)+1);
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1)) {
+
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x+10)/10+""+(y)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x+20)/10+""+(y)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+30)/10+""+(y)/10);
+tab[dotab8]=1;
+
+
+*/
+
+
+
+if ((rando==4)&&(p==1)) {
+
+
+dotab=parseInt((x)/10+""+((y)/10+1));
+dotab2=parseInt((x+10)/10+""+((y)/10+1));
+dotab3=parseInt((x+20)/10+""+((y)/10+1));
+dotab4=parseInt((x+10)/10+""+((y+10)/10+1));
+
+
+
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1))  {
+
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x+10)/10+""+(y)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x+20)/10+""+(y)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+10)/10+""+(y+10)/10);
+tab[dotab8]=1;
+
+
+
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+}
+
+}
+
+
+/*
+
+
+
+
+
+if if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1))  {
+
+
+
+*/
+
+if ((rando==4)&&(p==2)) {
+
+
+
+dotab=parseInt((x)/10+""+((y)/10+1));
+dotab2=parseInt((x)/10+""+((y+10)/10+1));
+dotab3=parseInt((x)/10+""+((y+20)/10+1));
+dotab4=parseInt((x+10)/10+""+((y+10)/10+1));
+
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1))  {
+
+
+
+dotab5=parseInt((x)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x)/10+""+(y+10)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x+20)/10+""+(y+20)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+10)/10+""+(y+10)/10);
+tab[dotab8]=1;
+
+
+
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+}
+
+}
+/*
+
+
+
+dotab=parseInt((x)/10+""+((y)/10)+1);
+dotab2=parseInt((x)/10+""+((y+10)/10)+1);
+dotab3=parseInt((x)/10+""+((y+20)/10)+1);
+dotab4=parseInt((x+10)/10+""+((y+10)/10)+1);
+
+if   {
+
+
+
+
+
+
+*/
+
+if ((rando==4)&&(p==3)) {
+dotab=parseInt((x+10)/10+""+((y)/10+1));
+dotab2=parseInt((x+10)/10+""+((y+10)/10+1));
+dotab3=parseInt((x)/10+""+((y+10)/10+1));
+dotab4=parseInt((x+20)/10+""+((y+10)/10+1));
+
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1)) {
+
+
+dotab5=parseInt((x+10)/10+""+(y)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x+10)/10+""+(y+10)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x)/10+""+(y+10)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+20)/10+""+(y+10)/10);
+tab[dotab8]=1;
+
+
+
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+}
+
+}
+
+/*
+
+
+dotab=parseInt((x+10)/10+""+((y)/10)+1);
+dotab2=parseInt((x+10)/10+""+((y+10)/10)+1);
+dotab3=parseInt((x)/10+""+((y+10)/10)+1);
+dotab4=parseInt((x+20)/10+""+((y+10)/10)+1);
+
+if  {
+
+
+*/
+
+
+if ((rando==4)&&(p==4)) {
+
+dotab=parseInt((x)/10+""+((y+10)/10+1));
+dotab2=parseInt((x+10)/10+""+((y)/10));
+dotab3=parseInt((x+10)/10+""+((y+10)/10));
+dotab4=parseInt((x+10)/10+""+((y+20)/10));
+
+
+if ((tab[dotab]==1)||(tab[dotab2]==1)||(tab[dotab3]==1)||(tab[dotab4]==1)) {
+
+
+
+
+dotab5=parseInt((x)/10+""+(y+10)/10);
+tab[dotab5]=1;
+dotab6=parseInt((x+10)/10+""+(y)/10);
+tab[dotab6]=1;
+dotab7=parseInt((x+10)/10+""+(y+10)/10);
+tab[dotab7]=1;
+dotab8=parseInt((x+10)/10+""+(y+20)/10);
+tab[dotab8]=1;
+
+
+
+y=20;
+x=50;
+p=1;
+mozna=1;
+
+}
+
+}
+
+
+
+
+
+
+for (i=1;i<=17;i++){
+
+
+for (j=1;j<=17;j++){
+
+dotab=parseInt(j+""+i);
+if (tab[dotab]==1) {
+
+policz=policz+1;
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(j*10, i*10, 10, 10);
+ctx.stroke();
+}
+
+if (policz==6) {
+
+policz=0;
+rzad=i;
+//alert(i);
+}
+
+
+if (max<policz) {
+
+max=policz;
+}
+
+
+}
+
+policz=0;
+}
+
+
+if (max>=6) {  max=0; }
+//ctx.fillStyle = "red";
+//ctx.fillText(max, 0, 0);
+
+
+
+
+
+if (rzad!=0) {
+
+
+for (i=rzad;i>=1;i--){
+
+for (j=1;j<=17;j++){
+dotab=parseInt(j+""+i);
+dotab2=parseInt(j+""+(i-1));
+tab[dotab]=tab[dotab2];
+}
+}
+
+
+
+}
+
+}
+rzad=0;
+policz=0;
+y=y+10;
+x=delta+x;
+delta=0;
+key=0;
+
+/*
+for(i=0;i<=20;i++){
+for (j=0;j<=20;j++){
+dotab=parseInt(i+""+j);
+if(tab[dotab] == undefined){
+tab[dotab]=0;
+}
+
+}
+
+
+}
+*/
+//alert(y);
+//alert(x);
+ctx.stroke();
+console.log(tab[527]);
+//5181
+//alert(tab[1818]);
+/*
+if (tab[2018] == undefined){
+alert("t");
+}
+*/
+//alert(x+" "+y);
+}
+glowna();
+setInterval(glowna, 1000);
+
+
+
+//527
+
+
+</script>
+
+
+<br>
+
+
+<input type="button" onclick="keys(4)" value="left" style="width:50;height:50"><input type="button" onclick="keys(5)" value="round" style="width:50;height:50"><input type="button" onclick="keys(6)" value="right" style="width:50;height:50">
